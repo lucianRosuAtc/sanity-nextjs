@@ -8,6 +8,7 @@ export interface blogCard{
     publishedAt: string;
     categories: string[];
     mainImage: any;
+    text: string;
 }
 
  // 2) create the interface
