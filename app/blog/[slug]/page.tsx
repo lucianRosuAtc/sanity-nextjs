@@ -1,7 +1,11 @@
 import { fullBlogCard } from "@/app/components/interface";
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
-import { PortableText } from "@portabletext/react";
+// import {PortableText} from '@portabletext/react'
+
+
+
+export const revalidate = 60; 
 
 async function getData(slug: string) {
   const query = `
@@ -44,9 +48,11 @@ export default async function BlogArticle({
         className="rounded-lg h-[400px] object-cover mx-auto p-1 border-2 border-primary mt-8"
       />
       <div className=" ">
-        <p className="mt-8 text-xl md:text-2xl leading-8 tracking-tite text-wrap max-w-4xl ">
-          {/* <PortableText value={data.text} /> */ }
+        <p className="mt-8 text-sm md:text-base leading-8 -tracking-tight text-wrap max-w-4xl text-center">
+          {/* <PortableText value={data.text} />  */}
+
           {data.text}
+        
         </p>
       </div>
     </div>
