@@ -25,6 +25,6 @@ currentSlug: string;
 publishedAt: string;
 categories: string[];
 mainImage: any;
-text: string;
+text: any;
 alt: string; 
 }
