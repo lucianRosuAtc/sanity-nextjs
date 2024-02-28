@@ -20,8 +20,10 @@ async function getData() {
       publishedAt,
       "categories": categories[]->title,
       "mainImage": mainImage.asset->url,
-      "text": body[0].children[0].text
-  }`;
+      "alt": mainImage.alt
+      "text": body[0].children[0].text,
+    }`;
+    
   const data = await client.fetch(query);
   return data;
 
@@ -41,7 +43,7 @@ export default async function Home() {
           <Image
             // src={urlForImage(post.mainImage).toString()}
             src={post.mainImage}
-            alt='main image'
+            alt={post.alt}
             width={400}
             height={400}
             className="rounded-t-lg h-[400px] object-cover"
