@@ -44,7 +44,7 @@ export const ScrollToTop = () => {
           onClick={scrollToTop}
           className={className(
             isVisable ? "opacity-100" : "opacity-0 ",
-            " flex items-center justify-center w-[60px] h-[60px] shadow-sm text-white bg-black opacity-50 transition-all hover:bg-primary focus:outline-none rounded-lg"
+            " flex items-center justify-center w-[60px] h-[60px] shadow-sm text-white bg-orange-500 opacity-90 transition-all hover:bg-primary focus:outline-none rounded-lg"
           )}
           aria-label="Right Align"
         >

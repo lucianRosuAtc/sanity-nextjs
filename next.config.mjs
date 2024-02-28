@@ -5,6 +5,7 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "cdn.sanity.io",
+        port: "",
       },
       {
         protocol: "https",
@@ -15,3 +16,5 @@ const nextConfig = {
 };
 
 export default nextConfig;
+
+// 3) Add remotePatterns to your next.config.js file

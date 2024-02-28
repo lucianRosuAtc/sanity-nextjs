@@ -10,4 +10,4 @@ export interface blogCard{
     mainImage: any;
 }
 
- // 2 create the interface
+ // 2) create the interface

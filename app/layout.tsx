@@ -3,6 +3,7 @@ import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import { ScrollToTop } from "./ScrollToTop";
 import Navbar from "./components/Navbar";
+import { ThemeProvider } from "./components/theme-provider"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,7 +16,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Fun with Saity",
+  title: "Fun with Sanity",
   description: "Learning how to use Sanity with Next.js",
   keywords: ["Sanity", "Next.js", "React"],
   icons:[{rel:"icon", url:"/favicon.ico"}],
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
       url:"/images/og-image.jpg",
       width: 1200,
       height: 630,
-      alt: "Fun with Saity",
+      alt: "Fun with Sanity",
     },
     locale: "en_US",
     type: "website",
@@ -43,9 +44,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} ${montserrat.variable} max-w-[1920px] mx-auto`}>
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
         <Navbar />
         <main>{children}</main>
         <ScrollToTop />
+        </ThemeProvider>
       </body>
     </html>
   );
