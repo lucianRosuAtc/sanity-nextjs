@@ -33,7 +33,7 @@ export default async function Home() {
   console.log(data)
   return (
     <div className="flex flex-col justify-center items-center px-4">
-      <h1 className="my-6">Next.js + Sanity</h1>
+      <h1 className="my-6 text-xl md:text-2xl">Next.js + Sanity</h1>
       <div  className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
       {data.map((post, idx) => (
@@ -46,13 +46,13 @@ export default async function Home() {
             height={400}
             className="rounded-t-lg h-[400px] object-cover"
             />
-         <p className="text-xl md:text-2xl line-clamp-2 py-3">{post.title}</p>
-         <p className="text-xl md:text-2xl line-clamp-2 py-3">{post.categories}</p>
-         <p className="text-sm md:text-base line-clamp-3 py-3 max-w-[400px]">{post.text}</p>
+         <p className="text-xl md:text-2xl line-clamp-2 py-3 font-bold">{post.title}</p>
+         <p className="text-xl md:text-2xl line-clamp-2 py-3 font-semibold">{post.categories}</p>
+         <p className="text-sm md:text-base line-clamp-3 py-3 ">{post.text}</p>
          <p className="text-xl md:text-2xl line-clamp-2 py-3">author: {post.author.name}({post.author.nickname})</p>
          <p className="text-sm md:text-base text-wrap">published at: {post.publishedAt}</p>
          <Button asChild className="w-full mt-7">
-          <Link href={`/post/${post.currentSlug}`}>Read More</Link>
+          <Link href={`/blog/${post.currentSlug}`}>Read More</Link>
           </Button>
         </div>
       ))}
