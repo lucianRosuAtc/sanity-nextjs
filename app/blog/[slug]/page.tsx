@@ -22,5 +22,6 @@ export default async function BlogArticle({
   params: { slug: string };
 }) {
   const data = await getData(params.slug);
+  console.log(data)
   return <div className="max-w-3xl mx-auto">{params.slug}</div>;
 }

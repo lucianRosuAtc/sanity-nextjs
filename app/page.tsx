@@ -20,7 +20,7 @@ async function getData() {
       publishedAt,
       "categories": categories[]->title,
       "mainImage": mainImage.asset->url,
-      "alt": mainImage.alt
+      "alt": mainImage.alt,
       "text": body[0].children[0].text,
     }`;
     
