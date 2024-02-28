@@ -32,7 +32,7 @@ async function getData() {
 
 export default async function Home() {
   const data: blogCard[] = await getData();
-  console.log(data)
+  // console.log(data)
   return (
     <div className="flex flex-col justify-center items-center px-4">
       <h1 className="my-6 text-xl md:text-2xl">Next.js + Sanity</h1>
