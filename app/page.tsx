@@ -34,7 +34,7 @@ export default async function Home() {
   const data: blogCard[] = await getData();
   // console.log(data)
   return (
-    <div className="flex flex-col justify-center items-center px-4">
+    <div className="flex flex-col justify-center items-center px-4 mx-auto">
       <h1 className="my-8 text-xl md:text-4xl font-bold">Next.js + Sanity</h1>
       <div  className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
@@ -50,7 +50,7 @@ export default async function Home() {
             />
          <p className="text-xl md:text-2xl line-clamp-2 py-3 font-bold">{post.title}</p>
          <p className="text-xl md:text-2xl line-clamp-2 py-6 font-semibold">category: {post.categories}</p>
-         <p className="text-sm md:text-base line-clamp-3 py-3 ">{post.text}</p>
+         <p className="text-sm md:text-base line-clamp-3 py-3 border-b-2">{post.text}</p>
          <div className="border-2 mt-3 rounded-lg">
 <div className="p-2">
          <p className="text-xl md:text-2xl line-clamp-2 pb-4">author: {post.author.name}({post.author.nickname})</p>
