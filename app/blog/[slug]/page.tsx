@@ -3,9 +3,7 @@ import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 // import {PortableText} from '@portabletext/react'
 
-
-
-export const revalidate = 60; 
+export const revalidate = 60;
 
 async function getData(slug: string) {
   const query = `
@@ -15,6 +13,11 @@ async function getData(slug: string) {
       "text": body[0].children[0].text,
       "mainImage": mainImage.asset->url,
       "alt": mainImage.alt,
+      publishedAt,
+      author->{
+        name,
+        nickname,
+      },
     }[0]`;
 
   const data = await client.fetch(query);
@@ -29,16 +32,16 @@ export default async function BlogArticle({
   const data: fullBlogCard = await getData(params.slug);
   console.log(data);
   return (
-    <div className="max-w-3xl mx-auto mt-8">
+    <div className="max-w-3xl mx-auto mt-8 px-4 text-wrap">
       <h1 className="flex items-center justify-center text-2xl md:text-4xl font-bold  py-5">
         <span className="text-primary">L</span>u
         <span className="text-primary">c</span>&apos;s
         <span className="text-primary pl-3">b</span>l
         <span className="text-primary">o</span>g
       </h1>
-      <span className="mt-2 block text-xl md:text-3xl text-center leading-8 font-semibold tracking-tite sm:text-4xl">
+      <h2 className="mt-2 block text-xl md:text-3xl text-center leading-8 font-semibold tracking-tite sm:text-4xl">
         {data.title}
-      </span>
+      </h2>
       <Image
         src={data.mainImage}
         alt={data.alt}
@@ -47,12 +50,21 @@ export default async function BlogArticle({
         priority
         className="rounded-lg h-[400px] object-cover mx-auto p-1 border-2 border-primary mt-8"
       />
-      <div className=" ">
-        <p className="mt-8 text-sm md:text-base leading-8 -tracking-tight text-wrap max-w-4xl text-center">
+
+      <p className="text-sm md:text-lg pt-6">published: {data.publishedAt}</p>
+
+      <div className="text-left">
+        <p className="mt-8 text-sm md:text-base leading-8 tracking-tight max-w-4xl">
           {/* <PortableText value={data.text} />  */}
 
           {data.text}
-        
+        </p>
+
+        <p className="text-xl md:text-2xl line-clamp-2 py-3 font-semibold">
+          {data.categories}
+        </p>
+        <p className="text-sm md:text-2xl line-clamp-2 py-3">
+          author: {data.author.name} ({data.author.nickname})
         </p>
       </div>
     </div>
