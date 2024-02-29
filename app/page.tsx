@@ -39,20 +39,25 @@ export default async function Home() {
       <div  className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
       {data.map((post, idx) => (
-        <div key={idx} className="border p-4 rounded-xl max-w-[400px]">
+        <div key={idx} className="border-2 p-4 rounded-xl max-w-[400px]">
           <Image
             // src={urlForImage(post.mainImage).toString()}
             src={post.mainImage}
             alt={post.alt}
             width={400}
             height={400}
-            className="rounded-t-lg h-[400px] object-cover"
+            className="rounded-t-lg h-[350px] object-cover"
             />
          <p className="text-xl md:text-2xl line-clamp-2 py-3 font-bold">{post.title}</p>
          <p className="text-xl md:text-2xl line-clamp-2 py-6 font-semibold">category: {post.categories}</p>
          <p className="text-sm md:text-base line-clamp-3 py-3 ">{post.text}</p>
-         <p className="text-xl md:text-2xl line-clamp-2 pb-4 pt-10">author: {post.author.name}({post.author.nickname})</p>
+         <div className="border-2 mt-3 rounded-lg">
+<div className="p-2">
+         <p className="text-xl md:text-2xl line-clamp-2 pb-4">author: {post.author.name}({post.author.nickname})</p>
          <p className="text-sm md:text-base text-wrap">published at: {post.publishedAt}</p>
+</div>
+  
+         </div>
          <Button asChild className="w-full mt-7">
           <Link href={`/blog/${post.currentSlug}`}>Read More</Link>
           </Button>
