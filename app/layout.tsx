@@ -3,7 +3,7 @@ import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import ScrollToTopButton from "./ScrollToTopButton";
 import Navbar from "./components/Navbar";
-import { ThemeProvider } from "./components/theme-provider"
+import { ThemeProvider } from "./components/theme-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,14 +19,14 @@ export const metadata: Metadata = {
   title: "Fun with Sanity",
   description: "Learning how to use Sanity with Next.js",
   keywords: ["Sanity", "Next.js", "React"],
-  icons:[{rel:"icon", url:"/favicon.ico"}],
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
   openGraph: {
     title: "Fun with Saity",
     description: "Learning how to use Sanity with Next.js",
     url: "https://fun-with-sanity.vercel.app",
     siteName: "Fun with Saity",
-    images:{
-      url:"/images/og-image.jpg",
+    images: {
+      url: "/images/og-image.jpg",
       width: 1200,
       height: 630,
       alt: "Fun with Sanity",
@@ -42,19 +42,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-
-      <div className={`${inter.className} ${montserrat.variable} max-w-[1920px] mx-auto`}>
-      <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-        <Navbar />
-        <main>{children}</main>
-        <ScrollToTopButton />
+    <html lang="en">
+      <body
+        className={`${inter.className} ${montserrat.variable} max-w-[1920px] mx-auto`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <main>{children}</main>
+          <ScrollToTopButton />
         </ThemeProvider>
-      </div>
- 
+      </body>
+    </html>
   );
 }
