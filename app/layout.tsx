@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
-import { ScrollToTop } from "./ScrollToTop";
+import ScrollToTopButton from "./ScrollToTopButton";
 import Navbar from "./components/Navbar";
 import { ThemeProvider } from "./components/theme-provider"
 
@@ -52,7 +52,7 @@ export default function RootLayout({
           >
         <Navbar />
         <main>{children}</main>
-        <ScrollToTop />
+        <ScrollToTopButton />
         </ThemeProvider>
       </body>
     </html>
