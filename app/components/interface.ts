@@ -5,6 +5,7 @@ export interface blogCard {
   author: {
     name: string;
     nickname: string;
+    authorImg: string | StaticImport;
   };
   currentSlug: string;
   publishedAt: string;
