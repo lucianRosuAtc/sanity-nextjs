@@ -49,7 +49,7 @@ export default async function BlogArticle({
         width={800}
         height={800}
         priority
-        className="rounded-lg h-[400px] object-cover mx-auto p-1 border-2 border-primary mt-8"
+        className="rounded-lg h-[400px] object-cover mx-auto p-1 border-2 border-primary mt-8 "
       />
 
       <p className="text-sm md:text-lg pt-6">published: {data.publishedAt}</p>
