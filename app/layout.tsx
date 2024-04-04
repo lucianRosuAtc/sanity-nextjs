@@ -44,16 +44,16 @@ export default function RootLayout({
   return (
 
       <div className={`${inter.className} ${montserrat.variable} max-w-[1920px] mx-auto`}>
-      <ThemeProvider
+      {/* <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-          >
+          > */}
         <Navbar />
         <main>{children}</main>
         <ScrollToTopButton />
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
       </div>
  
   );
