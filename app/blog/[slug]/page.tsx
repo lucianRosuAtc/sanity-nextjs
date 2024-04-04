@@ -65,13 +65,13 @@ export default async function BlogArticle({
         <p className="text-xl md:text-2xl line-clamp-2 py-3 font-semibold">
           {data.categories}
         </p>
-        <Image
+        {/* <Image
           // src={`https://cdn.sanity.io/images/1g8n8r5k/production/${data.author.authorImg}`}
           src={data.author.authorImg}
           alt={data.author.name}
           width={100}
           height={100}
-          className="object-contain rounded-full border border-white"/>
+          className="object-contain rounded-full border border-white"/> */}
           
         <p className="text-sm md:text-2xl line-clamp-2 py-3">
           author: {data.author.name} ({data.author.nickname})
