@@ -42,8 +42,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} ${montserrat.variable} max-w-[1920px] mx-auto`}>
+
+      <div className={`${inter.className} ${montserrat.variable} max-w-[1920px] mx-auto`}>
       <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -54,7 +54,7 @@ export default function RootLayout({
         <main>{children}</main>
         <ScrollToTopButton />
         </ThemeProvider>
-      </body>
-    </html>
+      </div>
+ 
   );
 }
