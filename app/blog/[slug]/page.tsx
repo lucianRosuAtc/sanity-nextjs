@@ -74,7 +74,7 @@ export default async function BlogArticle({
         width={70}
         height={70}
         priority
-        className="rounded-full object-contain  p-1 border-2 border-primary  "
+        className="rounded-full object-contain p-1 border-2 border-primary"
       />
 
         <p className="text-sm md:text-2xl pl-2">
