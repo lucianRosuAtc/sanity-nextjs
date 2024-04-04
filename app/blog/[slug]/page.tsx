@@ -17,6 +17,7 @@ async function getData(slug: string) {
       author->{
         name,
         nickname,
+        "authorImg": image.asset->url,
       },
     }[0]`;
 
@@ -33,7 +34,7 @@ export default async function BlogArticle({
   console.log(data);
   return (
     <div className="max-w-3xl mx-auto mt-8 px-4 text-wrap">
-      <h1 className="flex items-center justify-center text-2xl md:text-4xl font-bold  py-5">
+      <h1 className="flex items-center justify-center text-2xl md:text-4xl font-bold py-5">
         <span className="text-primary">L</span>u
         <span className="text-primary">c</span>&apos;s
         <span className="text-primary pl-3">b</span>l
@@ -55,17 +56,31 @@ export default async function BlogArticle({
 
 
       <div className="text-left">
-        <p className="mt-8 text-sm md:text-base leading-8 tracking-tight max-w-4xl">
-          <PortableText value={data.text} /> 
-          {/* {data.text} */}
+        {/* <p className="mt-8 text-sm md:text-base leading-8 tracking-tight max-w-4xl"> */}
+        <p className="mt-8 prose prose-blue prose-xl dark:prose-invert prose-li:marker:text-orange-500 leading-8 tracking-tight max-w-4xl">
+          {/* <PortableText value={data.text} />  */}
+          {data.text}
         </p>
 
         <p className="text-xl md:text-2xl line-clamp-2 py-3 font-semibold">
           {data.categories}
-        </p>      
-        <p className="text-sm md:text-2xl line-clamp-2 py-3">
-          author: {data.author.name} ({data.author.nickname})
+        </p>    
+        <div className="flex items-center mb-8">
+        <p className="text-sm md:text-2xl line-clamp-2 pr-2">author:</p>
+
+        <Image
+        src={data.author.authorImg}
+        alt={data.alt}
+        width={70}
+        height={70}
+        priority
+        className="rounded-full object-contain  p-1 border-2 border-primary  "
+      />
+
+        <p className="text-sm md:text-2xl pl-2">
+        {data.author.name} ({data.author.nickname}) 
         </p>
+          </div>  
       </div>
     </div>
   );
