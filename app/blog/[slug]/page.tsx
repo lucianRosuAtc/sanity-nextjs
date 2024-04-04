@@ -17,7 +17,6 @@ async function getData(slug: string) {
       author->{
         name,
         nickname,
-        "authorImg": image.asset->_ref,
       },
     }[0]`;
 
@@ -57,22 +56,13 @@ export default async function BlogArticle({
 
       <div className="text-left">
         <p className="mt-8 text-sm md:text-base leading-8 tracking-tight max-w-4xl">
-          {/* <PortableText value={data.text} />  */}
-
-          {data.text}
+          <PortableText value={data.text} /> 
+          {/* {data.text} */}
         </p>
 
         <p className="text-xl md:text-2xl line-clamp-2 py-3 font-semibold">
           {data.categories}
-        </p>
-        {/* <Image
-          // src={`https://cdn.sanity.io/images/1g8n8r5k/production/${data.author.authorImg}`}
-          src={data.author.authorImg}
-          alt={data.author.name}
-          width={100}
-          height={100}
-          className="object-contain rounded-full border border-white"/> */}
-          
+        </p>      
         <p className="text-sm md:text-2xl line-clamp-2 py-3">
           author: {data.author.name} ({data.author.nickname})
         </p>
