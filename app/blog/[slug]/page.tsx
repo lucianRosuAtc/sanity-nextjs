@@ -31,7 +31,7 @@ export default async function BlogArticle({
   params: { slug: string };
 }) {
   const data: fullBlogCard = await getData(params.slug);
-  console.log(data);
+  // console.log(data);
   return (
     <div className="max-w-3xl mx-auto mt-8 px-4 text-wrap">
       <h1 className="flex items-center justify-center text-2xl md:text-4xl font-bold py-5">

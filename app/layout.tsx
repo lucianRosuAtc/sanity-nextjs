@@ -18,22 +18,22 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Fun with Sanity",
   description: "Learning how to use Sanity with Next.js",
-  // keywords: ["Sanity", "Next.js", "React"],
+  keywords: ["Sanity", "Next.js", "React"],
   icons:[{rel:"icon", url:"/favicon.ico"}],
-  // openGraph: {
-  //   title: "Fun with Saity",
-  //   description: "Learning how to use Sanity with Next.js",
-  //   url: "https://fun-with-sanity.vercel.app",
-  //   siteName: "Fun with Saity",
-  //   images:{
-  //     url:"/images/og-image.jpg",
-  //     width: 1200,
-  //     height: 630,
-  //     alt: "Fun with Sanity",
-  //   },
-  //   locale: "en_US",
-  //   type: "website",
-  // },
+  openGraph: {
+    title: "Fun with Saity",
+    description: "Learning how to use Sanity with Next.js",
+    url: "https://fun-with-sanity.vercel.app",
+    siteName: "Fun with Saity",
+    images:{
+      url:"/images/og-image.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Fun with Sanity",
+    },
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -44,16 +44,16 @@ export default function RootLayout({
   return (
 
       <div className={`${inter.className} ${montserrat.variable} max-w-[1920px] mx-auto`}>
-      {/* <ThemeProvider
+      <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-          > */}
+          >
         <Navbar />
         <main>{children}</main>
         <ScrollToTopButton />
-        {/* </ThemeProvider> */}
+        </ThemeProvider>
       </div>
  
   );
