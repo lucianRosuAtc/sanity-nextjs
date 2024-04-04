@@ -4,6 +4,7 @@ import "./globals.css";
 import ScrollToTopButton from "./ScrollToTopButton";
 import Navbar from "./components/Navbar";
 import { ThemeProvider } from "./components/theme-provider";
+import Footer from "./components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -55,6 +56,7 @@ export default function RootLayout({
           <Navbar />
           <main>{children}</main>
           <ScrollToTopButton />
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
