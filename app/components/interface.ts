@@ -13,6 +13,7 @@ export interface blogCard {
   mainImage: any;
   text: string;
   alt: string;
+  line: string;
 }
 
 // 2) create the interface for fullBlogCard
@@ -30,4 +31,5 @@ export interface fullBlogCard {
   mainImage: any;
   text: any;
   alt: string;
+  line: string;
 }

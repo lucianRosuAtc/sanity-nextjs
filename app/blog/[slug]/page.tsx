@@ -1,6 +1,5 @@
 import { fullBlogCard } from "@/app/components/interface";
 import { client } from "@/sanity/lib/client";
-import { PortableText } from '@portabletext/react';
 import Image from "next/image";
 
 export const revalidate = 60;
@@ -52,35 +51,43 @@ export default async function BlogArticle({
         className="rounded-lg h-[400px] object-cover mx-auto p-1 border-2 border-primary mt-8 "
       />
 
-      <p className="text-sm md:text-lg pt-6">published: {data.publishedAt}</p>
-
+      <p className="text-sm md:text-lg pt-6">
+        published at:{" "}
+        {new Intl.DateTimeFormat("en-US", {
+          day: "2-digit",
+          month: "short",
+          year: "numeric",
+        }).format(new Date(data.publishedAt))}
+      </p>
 
       <div className="text-left">
-        {/* <p className="mt-8 text-sm md:text-base leading-8 tracking-tight max-w-4xl"> */}
         <p className="mt-8 prose prose-blue prose-xl dark:prose-invert prose-li:marker:text-orange-500 leading-8 tracking-tight max-w-4xl">
-          {/* <PortableText value={data.text} />  */}
-          {data.text}
+          {data.text.split("\n").map((text: string) => (
+            <span key={text}>
+              {text}
+              <br />
+            </span>
+          ))}
         </p>
-
         <p className="text-xl md:text-2xl line-clamp-2 py-3 font-semibold">
           {data.categories}
-        </p>    
-        <div className="flex items-center mb-8">
-        <p className="text-sm md:text-2xl line-clamp-2 pr-2">author:</p>
-
-        <Image
-        src={data.author.authorImg}
-        alt={data.alt}
-        width={70}
-        height={70}
-        priority
-        className="rounded-full object-contain p-1 border-2 border-primary"
-      />
-
-        <p className="text-sm md:text-2xl pl-2">
-        {data.author.name} ({data.author.nickname}) 
         </p>
-          </div>  
+        <div className="flex items-center mb-8">
+          <p className="text-sm md:text-2xl line-clamp-2 pr-2">author:</p>
+
+          <Image
+            src={data.author.authorImg}
+            alt={data.alt}
+            width={70}
+            height={70}
+            priority
+            className="rounded-full object-contain p-1 border-2 border-primary"
+          />
+
+          <p className="text-sm md:text-2xl pl-2">
+            {data.author.name} ({data.author.nickname})
+          </p>
+        </div>
       </div>
     </div>
   );

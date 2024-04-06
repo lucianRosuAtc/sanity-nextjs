@@ -2,7 +2,6 @@ import { client } from "@/sanity/lib/client";
 import PostList from "./components/PostList";
 import Image from "next/image";
 import { blogCard } from "./components/interface";
-import { urlForImage } from "@/sanity/lib/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -40,7 +39,6 @@ export default async function Home() {
         {data.map((post, idx) => (
           <div key={idx} className="border-2 p-4 rounded-xl max-w-[400px]">
             <Image
-              // src={urlForImage(post.mainImage).toString()}
               src={post.mainImage}
               alt={post.alt}
               width={400}
