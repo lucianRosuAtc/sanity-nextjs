@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
-import ScrollToTopButton from "./ScrollToTopButton";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 import Navbar from "./components/Navbar";
 import { ThemeProvider } from "./components/theme-provider";
 import Footer from "./components/Footer";

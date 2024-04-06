@@ -15,7 +15,7 @@ export interface blogCard {
   alt: string;
 }
 
-// 2) create the interface
+// 2) create the interface for fullBlogCard
 
 export interface fullBlogCard {
   title: string;
