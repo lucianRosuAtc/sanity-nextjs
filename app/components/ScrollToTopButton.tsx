@@ -28,6 +28,7 @@ const ScrollToTopButton = () => {
       top: 0,
       behavior: "smooth",
     });
+    setIsVisible(false);
   };
 
   return (
