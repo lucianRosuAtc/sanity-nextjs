@@ -62,13 +62,13 @@ export default async function BlogArticle({
       </p>
 
       <div className="text-left">
-        <div className="mt-8 prose prose-primary prose-xl dark:prose-invert prose-li:marker:text-orange-500 leading-8 tracking-tight max-w-4xl prose-h3:first-letter:text-primary">
+        <div className="mt-8 prose prose-primary prose-lg dark:prose-invert prose-li:marker:text-orange-500 leading-8 tracking-tight max-w-4xl prose-h3:first-letter:text-primary">
           {/* <PortableText value={data.text} />  */}
 
           <p className="">
-            {data.text.split("\n").map((line: string) => (
-              <span key={line}>
-                {line}
+            {data.text.split("\n").map((text: string, index: number) => (
+              <span key={index}>
+                {text}
                 <br />
               </span>
             ))}
