@@ -18,12 +18,12 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Fun with Sanity",
-  description: "Learning how to use Sanity with Next.js",
+  description: "Using Sanity and Next.js to build a blog app",
   keywords: ["Sanity", "Next.js", "React"],
   icons: [{ rel: "icon", url: "/favicon.ico" }],
   openGraph: {
     title: "Fun with Saity",
-    description: "Learning how to use Sanity with Next.js",
+    description: "Using Sanity and Next.js to build a blog app",
     url: "https://fun-with-sanity.vercel.app",
     siteName: "Fun with Saity",
     images: {

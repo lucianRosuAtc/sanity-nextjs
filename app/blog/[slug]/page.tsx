@@ -1,5 +1,6 @@
 import { fullBlogCard } from "@/app/components/interface";
 import { client } from "@/sanity/lib/client";
+import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 
 export const revalidate = 60;
@@ -61,14 +62,18 @@ export default async function BlogArticle({
       </p>
 
       <div className="text-left">
-        <p className="mt-8 prose prose-blue prose-xl dark:prose-invert prose-li:marker:text-orange-500 leading-8 tracking-tight max-w-4xl">
-          {data.text.split("\n").map((line: string, i: number) => (
-            <span key={i}>
-              {line}
-              <br />
-            </span>
-          ))}
-        </p>
+        <div className="mt-8 prose prose-primary prose-xl dark:prose-invert prose-li:marker:text-orange-500 leading-8 tracking-tight max-w-4xl prose-h3:first-letter:text-primary">
+          {/* <PortableText value={data.text} />  */}
+
+          <p className="">
+            {data.text.split("\n").map((line: string) => (
+              <span key={line}>
+                {line}
+                <br />
+              </span>
+            ))}
+          </p>
+        </div>
         <p className="text-xl md:text-2xl line-clamp-2 py-3 font-semibold">
           {data.categories}
         </p>
