@@ -35,7 +35,7 @@ export default async function Home() {
   // console.log(data)
   return (
     <div className="flex flex-col justify-center items-center px-4 mx-auto">
-      <h1 className="my-8 text-xl md:text-4xl font-bold">Next.js + Sanity</h1>
+      <h1 className="my-8 text-xl md:text-4xl font-bold">Next.js & Sanity</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {data.map((post, idx) => (
           <div key={idx} className="border-2 p-4 rounded-xl max-w-[400px]">
@@ -47,10 +47,10 @@ export default async function Home() {
               height={400}
               className="rounded-t-lg h-[350px] object-cover"
             />
-            <p className="text-xl md:text-2xl line-clamp-2 py-3 font-bold">
+            <p className="text-lg md:text-2xl line-clamp-2 py-3 font-bold">
               {post.title}
             </p>
-            <p className="text-xl md:text-2xl line-clamp-2 py-6 font-semibold">
+            <p className="text-lg md:text-2xl line-clamp-2 py-6 font-semibold">
               category: {post.categories}
             </p>
             <p className="text-sm md:text-base line-clamp-3 py-3 border-b-2">
@@ -59,25 +59,33 @@ export default async function Home() {
             <div className="border-2 mt-3 rounded-lg">
               <div className="p-2">
                 <div className="flex items-center py-3">
-                  <p className="text-xl md:text-2xl">author: </p>
+                  <p className="text-lg md:text-2xl">author: </p>
                   <Image
                     src={post.author.authorImg}
                     alt={post.author.name}
-                    width={50}
-                    height={50}
-                    className="rounded-full mx-2 border border-gray-200 p-1"
+                    width={60}
+                    height={60}
+                    className="rounded-full mx-2 border border-gray-200 p-1 object-contain"
                   />
-                  <p className="text-xl md:text-2xl">
+                  <p className="text-lg md:text-2xl">
                     {post.author.name}({post.author.nickname})
                   </p>
                 </div>
-                <p className="text-sm md:text-base text-wrap">
+                {/* <p className="text-sm md:text-base text-wrap">
                   published at:{" "}
                   {new Date(post.publishedAt)
                     .toISOString()
                     .split(".")[0]
                     .slice(0, -3)
                     .replace("T", " T: ")}
+                </p> */}
+                <p className="text-sm md:text-base text-wrap">
+                  published at:{" "}
+                  {new Intl.DateTimeFormat("en-US", {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                  }).format(new Date(post.publishedAt))}
                 </p>
               </div>
             </div>
