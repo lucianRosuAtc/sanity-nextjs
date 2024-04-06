@@ -69,6 +69,9 @@ export default async function Home() {
                     {post.author.name}({post.author.nickname})
                   </p>
                 </div>
+
+                {/* diffrent data DateTimeFormat */}
+
                 {/* <p className="text-sm md:text-base text-wrap">
                   published at:{" "}
                   {new Date(post.publishedAt)
