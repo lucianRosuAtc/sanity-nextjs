@@ -62,9 +62,9 @@ export default async function BlogArticle({
 
       <div className="text-left">
         <p className="mt-8 prose prose-blue prose-xl dark:prose-invert prose-li:marker:text-orange-500 leading-8 tracking-tight max-w-4xl">
-          {data.text.split("\n").map((text: string) => (
-            <span key={text}>
-              {text}
+          {data.text.split("\n").map((line: string, i: number) => (
+            <span key={i}>
+              {line}
               <br />
             </span>
           ))}
