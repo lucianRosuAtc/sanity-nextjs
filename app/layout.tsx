@@ -21,20 +21,20 @@ export const metadata: Metadata = {
   description: "Using Sanity and Next.js to build a blog app",
   keywords: ["Sanity", "Next.js", "React"],
   icons: [{ rel: "icon", url: "/favicon.ico" }],
-  openGraph: {
-    title: "Fun with Saity",
-    description: "Using Sanity and Next.js to build a blog app",
-    url: "https://fun-with-sanity.vercel.app",
-    siteName: "Fun with Saity",
-    images: {
-      url: "/images/og-image.jpg",
-      width: 1200,
-      height: 630,
-      alt: "Fun with Sanity",
-    },
-    locale: "en_US",
-    type: "website",
-  },
+  // openGraph: {
+  //   title: "Fun with Saity",
+  //   description: "Using Sanity and Next.js to build a blog app",
+  //   url: "https://fun-with-sanity.vercel.app",
+  //   siteName: "Fun with Saity",
+  //   images: {
+  //     url: "/images/og-image.jpg",
+  //     width: 1200,
+  //     height: 630,
+  //     alt: "Fun with Sanity",
+  //   },
+  //   locale: "en_US",
+  //   type: "website",
+  // },
 };
 
 export default function RootLayout({
@@ -45,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} ${montserrat.variable} max-w-[1920px] mx-auto`}
+        className={`${inter.className} ${montserrat.variable} overflow-x-hidden`}
       >
         <ThemeProvider
           attribute="class"
