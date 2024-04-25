@@ -91,7 +91,7 @@ export default async function Home() {
                 </p>
               </div>
             </div>
-            <Button asChild className="w-full mt-7">
+            <Button asChild className="w-full mt-7 hover:text-black">
               <Link href={`/blog/${post.currentSlug}`}>Read More</Link>
             </Button>
           </div>
