@@ -1,7 +1,7 @@
 import { client } from "@/sanity/lib/client";
-import PostList from "./components/PostList";
+import PostList from "./mycomponents/PostList";
 import Image from "next/image";
-import { blogCard } from "./components/interface";
+import { blogCard } from "./mycomponents/interface";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -33,7 +33,7 @@ export default async function Home() {
   const data: blogCard[] = await getData();
   // console.log(data)
   return (
-    <div className="flex flex-col justify-center items-center px-4 mx-auto">
+    <div className="flex flex-col justify-center items-center">
       <h1 className="my-8 text-xl md:text-4xl font-bold">Next.js & Sanity</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {data.map((post, idx) => (

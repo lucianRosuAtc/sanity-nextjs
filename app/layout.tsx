@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
-import ScrollToTopButton from "./components/ScrollToTopButton";
-import Navbar from "./components/Navbar";
-import { ThemeProvider } from "./components/theme-provider";
-import Footer from "./components/Footer";
+import ScrollToTopButton from "./mycomponents/ScrollToTopButton";
+import Navbar from "./mycomponents/Navbar";
+import { ThemeProvider } from "./mycomponents/theme-provider";
+import Footer from "./mycomponents/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -45,16 +45,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} ${montserrat.variable} overflow-x-hidden`}
+        className={`${inter.className} ${montserrat.variable} overflow-x-hidden bg-white dark:bg-black dark:text-white transition-colors duration-500`}
       >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
+          // disableTransitionOnChange
         >
           <Navbar />
-          <main>{children}</main>
+          {children}
           <ScrollToTopButton />
           <Footer />
         </ThemeProvider>
