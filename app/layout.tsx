@@ -45,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} ${montserrat.variable}`}
+        className={`${inter.className} ${montserrat.variable} overflow-x-hidden`}
       >
         <ThemeProvider
           attribute="class"
