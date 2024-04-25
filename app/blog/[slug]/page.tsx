@@ -1,4 +1,4 @@
-import { fullBlogCard } from "@/app/components/interface";
+import { fullBlogCard } from "@/app/mycomponents/interface";
 import { client } from "@/sanity/lib/client";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";

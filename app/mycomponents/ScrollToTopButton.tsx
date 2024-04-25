@@ -11,7 +11,7 @@ const ScrollToTopButton = () => {
     // Show/hide scroll to top button based on scroll direction
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
-      setIsVisible(prevScrollPos > currentScrollPos || currentScrollPos < 100);
+      setIsVisible(prevScrollPos > currentScrollPos && currentScrollPos > 100);
       setPrevScrollPos(currentScrollPos);
     };
 
@@ -33,12 +33,14 @@ const ScrollToTopButton = () => {
 
   return (
     <button
-      className={`fixed bottom-8 right-8 bg-orange-500 text-white p-4 rounded-full shadow-md transition-opacity ${
+      className={`fixed bottom-8 right-8 bg-orange-500 text-white  rounded-full p-1 shadow-md transition-opacity ${
         isVisible ? "opacity-80" : "opacity-0"
       } hover:opacity-100`}
       onClick={scrollToTop}
     >
-      <ChevronUp className="h-8 w-8" aria-hidden="true" />
+      <div className="border-2 border-white  p-1 rounded-full">
+        <ChevronUp className="h-8 w-8" aria-hidden="true" />
+      </div>
     </button>
   );
 };

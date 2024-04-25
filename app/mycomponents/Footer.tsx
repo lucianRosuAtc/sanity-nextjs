@@ -10,7 +10,7 @@ const year = date.getFullYear();
 
 export default function Footer() {
   return (
-    <div className="flex flex-col mt-8 bg-black/60">
+    <div className="flex flex-col mt-8 bg-black/60 mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 border-t-2 border-orange-500 pt-6 md:pt-0">
         <div className="flex justify-center items-center">
           <Link href="/">
